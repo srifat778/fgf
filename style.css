@@ -1,0 +1,1068 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #f7d9ff,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #ffd6e9,
+            transparent 35%
+        ),
+        #faf7ff;
+
+    color: #4c3b59;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   SINGLE PAGE SYSTEM
+========================================= */
+
+.website-page {
+    display: none;
+
+    min-height: 100vh;
+    width: 100%;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.website-page.active {
+    display: block;
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+.floating-hearts span {
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 22px;
+
+    animation: floatHeart 8s linear infinite;
+
+    opacity: 0.7;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+.floating-hearts span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 40%;
+    animation-delay: 4s;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 55%;
+    animation-delay: 1s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 70%;
+    animation-delay: 3s;
+}
+
+.floating-hearts span:nth-child(6) {
+    left: 82%;
+    animation-delay: 5s;
+}
+
+.floating-hearts span:nth-child(7) {
+    left: 92%;
+    animation-delay: 6s;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+#page1 {
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    padding: 20px;
+}
+
+#page1.active {
+    display: flex;
+}
+
+.login-card {
+
+    width: 100%;
+    max-width: 430px;
+
+    padding: 40px 30px;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 20px 60px rgba(130, 77, 150, 0.15);
+
+    text-align: center;
+
+    backdrop-filter: blur(15px);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.cute-bear {
+    font-size: 65px;
+
+    animation: cuteBounce 2s ease-in-out infinite;
+}
+
+@keyframes cuteBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.login-card h1 {
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 45px;
+
+    color: #77458f;
+
+    margin: 10px 0;
+}
+
+.login-subtitle {
+
+    color: #92799d;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+.tiny-hearts {
+
+    color: #d58ac8;
+
+    letter-spacing: 8px;
+}
+
+.login-box {
+
+    text-align: left;
+
+    background: #fff8ff;
+
+    padding: 25px;
+
+    border-radius: 25px;
+}
+
+.login-box label {
+
+    display: block;
+
+    font-size: 13px;
+
+    margin: 10px 0 6px;
+
+    color: #795784;
+}
+
+.login-box input {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 15px;
+
+    border: 1px solid #ead5ed;
+
+    background: white;
+
+    outline: none;
+
+    font-family: inherit;
+
+    transition: 0.3s;
+}
+
+.login-box input:focus {
+
+    border-color: #c481cf;
+
+    box-shadow:
+        0 0 0 4px rgba(196, 129, 207, 0.1);
+}
+
+.login-box button {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 14px;
+
+    margin-top: 20px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #9b61b1,
+        #d887bc
+    );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(155, 97, 177, 0.25);
+}
+
+#login-error {
+
+    color: #e0789b;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    margin-top: 10px;
+}
+
+.login-footer {
+
+    margin-top: 25px;
+
+    color: #a487aa;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   GENERAL PAGE
+========================================= */
+
+.page-container {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 50px 20px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.welcome-card,
+.letter-page,
+.memories-page,
+.marry-card {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    padding: 50px 35px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.82);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 20px 70px rgba(125, 75, 145, 0.13);
+
+    backdrop-filter: blur(15px);
+}
+
+.small-title {
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 11px;
+
+    color: #bd82bb;
+
+    margin-bottom: 12px;
+}
+
+.welcome-card h1,
+.letter-page h1,
+.memories-page h1,
+.marry-card h1 {
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 58px;
+
+    color: #754789;
+
+    margin-bottom: 10px;
+}
+
+.cute-sticker {
+
+    font-size: 70px;
+
+    margin-bottom: 10px;
+}
+
+.sparkles {
+
+    color: #d18bc5;
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+.heart-divider {
+
+    color: #d88abd;
+
+    margin: 15px 0 25px;
+}
+
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.welcome-text {
+
+    max-width: 620px;
+
+    margin: auto;
+
+    line-height: 2;
+
+    color: #735e78;
+
+    font-size: 15px;
+}
+
+.cute-emojis {
+
+    margin: 30px 0;
+
+    font-size: 25px;
+
+    letter-spacing: 5px;
+}
+
+.cute-button {
+
+    border: none;
+
+    padding: 15px 28px;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #9c61b2,
+        #d884bb
+    );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 25px rgba(155, 97, 177, 0.18);
+}
+
+.cute-button:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(155, 97, 177, 0.25);
+}
+
+footer {
+
+    text-align: center;
+
+    color: #a88bac;
+
+    font-size: 12px;
+
+    padding-bottom: 20px;
+}
+
+
+/* =========================================
+   LOVE LETTER
+========================================= */
+
+.envelope {
+
+    width: 220px;
+
+    height: 150px;
+
+    margin: 35px auto;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #eac7ef,
+        #ffd6e8
+    );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 35px rgba(125, 75, 145, 0.15);
+
+    transition: 0.4s;
+}
+
+.envelope:hover {
+
+    transform:
+        translateY(-8px)
+        rotate(-2deg);
+
+    box-shadow:
+        0 25px 45px rgba(125, 75, 145, 0.2);
+}
+
+.envelope-top {
+
+    font-size: 50px;
+}
+
+.envelope-text {
+
+    color: #754789;
+
+    font-weight: 600;
+}
+
+.love-letter {
+
+    max-width: 700px;
+
+    margin: 30px auto;
+
+    padding: 35px;
+
+    background: #fff9ff;
+
+    border-radius: 25px;
+
+    text-align: left;
+
+    line-height: 2;
+
+    animation: appear 0.8s ease;
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.love-letter h2 {
+
+    text-align: center;
+
+    font-family: "Dancing Script", cursive;
+
+    color: #814d91;
+
+    font-size: 35px;
+
+    margin-bottom: 25px;
+}
+
+.love-letter p {
+
+    margin: 15px 0;
+
+    color: #6e5b73;
+}
+
+.highlight {
+
+    color: #a34f91 !important;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+.big-love {
+
+    font-family: "Dancing Script", cursive;
+
+    text-align: center;
+
+    font-size: 40px;
+
+    color: #9b4d91 !important;
+}
+
+.signature {
+
+    text-align: right;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 28px;
+
+    color: #8c5798 !important;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================================
+   MEMORIES
+========================================= */
+
+.memory-intro {
+
+    color: #907795;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   VERTICAL VIDEO - 9:16
+========================================= */
+
+.memory-video {
+
+    width: 100%;
+
+    max-width: 360px;
+
+    aspect-ratio: 9 / 16;
+
+    margin: 25px auto;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    background: #f7eafa;
+
+    border: 4px solid rgba(255,255,255,0.9);
+
+    box-shadow:
+        0 15px 40px rgba(100, 60, 120, 0.15);
+}
+
+.memory-video video {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+}
+
+.video-caption {
+
+    color: #987d9c;
+
+    font-size: 13px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   PHOTO GRID
+========================================= */
+
+.photo-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+.photo-card {
+
+    height: 270px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 35px rgba(100, 60, 120, 0.12);
+
+    transition: 0.4s;
+}
+
+.photo-card:hover {
+
+    transform:
+        translateY(-7px)
+        rotate(1deg);
+
+    box-shadow:
+        0 25px 45px rgba(100, 60, 120, 0.18);
+}
+
+.photo-card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.5s;
+}
+
+.photo-card:hover img {
+
+    transform: scale(1.05);
+}
+
+.photo-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(73, 40, 85, 0.42);
+
+    color: white;
+
+    opacity: 0;
+
+    transition: 0.4s;
+}
+
+.photo-card:hover .photo-overlay {
+
+    opacity: 1;
+}
+
+.photo-overlay span {
+
+    font-size: 35px;
+}
+
+.photo-overlay p {
+
+    font-weight: 600;
+
+    margin: 8px 0;
+}
+
+.photo-overlay small {
+
+    opacity: 0.85;
+}
+
+.music-status {
+
+    margin: 25px 0;
+
+    padding: 13px 20px;
+
+    display: inline-block;
+
+    border-radius: 20px;
+
+    background: #fff2fb;
+
+    color: #9b6a99;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   MARRIAGE PAGE
+========================================= */
+
+.marry-card {
+
+    max-width: 750px;
+}
+
+.giant-heart {
+
+    font-size: 85px;
+
+    animation:
+        heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.marry-card h2 {
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 50px;
+
+    color: #824b91;
+
+    margin: 20px 0;
+}
+
+.marry-text {
+
+    color: #806c84;
+
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+.answer-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.answer-buttons button {
+
+    border: none;
+
+    padding: 15px 28px;
+
+    border-radius: 25px;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.yes-button {
+
+    background: #b978bb;
+
+    color: white;
+}
+
+.obviously-button {
+
+    background: linear-gradient(
+        135deg,
+        #d681ba,
+        #9d65b6
+    );
+
+    color: white;
+}
+
+.answer-buttons button:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 12px 25px rgba(120, 70, 140, 0.2);
+}
+
+.final-message {
+
+    margin-top: 35px;
+
+    padding: 35px;
+
+    background: linear-gradient(
+        135deg,
+        #fff0fa,
+        #f6eaff
+    );
+
+    border-radius: 30px;
+
+    animation: appear 0.8s ease;
+}
+
+.final-message h2 {
+
+    font-size: 48px;
+
+    margin: 15px 0;
+}
+
+.final-message p {
+
+    color: #765e7b;
+
+    line-height: 1.8;
+}
+
+.celebration {
+
+    font-size: 28px;
+
+    letter-spacing: 5px;
+}
+
+.big-hearts {
+
+    font-size: 28px;
+
+    margin: 20px;
+}
+
+.forever {
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 30px !important;
+
+    color: #97518f !important;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .welcome-card,
+    .letter-page,
+    .memories-page,
+    .marry-card {
+
+        padding: 35px 20px;
+
+        border-radius: 25px;
+    }
+
+    .welcome-card h1,
+    .letter-page h1,
+    .memories-page h1,
+    .marry-card h1 {
+
+        font-size: 45px;
+    }
+
+    .photo-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .photo-card {
+
+        height: 300px;
+
+    }
+
+    .love-letter {
+
+        padding: 25px;
+
+        font-size: 14px;
+
+    }
+
+    .marry-card h2 {
+
+        font-size: 40px;
+
+    }
+
+    .login-card {
+
+        padding: 30px 20px;
+
+    }
+
+    .answer-buttons {
+
+        flex-direction: column;
+
+    }
+
+    .answer-buttons button {
+
+        width: 100%;
+
+    }
+
+    .memory-video {
+
+        max-width: 300px;
+
+    }
+
+}
